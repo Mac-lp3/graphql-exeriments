@@ -6,7 +6,6 @@ import { graphqlExpress } from 'graphql-server-express'
 import schema from './gql/Schema'
 
 const app = new express()
-console.log(schema)
 
 app.use('/graphql', bodyParser.json(),
     graphqlHTTP(req => ({
