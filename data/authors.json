@@ -1,18 +1,21 @@
 [
     {
+        "id": 1,
         "name": "Jim Jones",
         "quote": "lol omg",
         "isActive": true,
         "posts": []
     },
     {
+        "id": 2,
         "name": "Tommy Tim",
         "quote": "wow",
         "isActive": true,
         "posts": []
     },
     {
-        "name": "Jim Jones",
+        "id": 3,
+        "name": "Mac McMac",
         "quote": "wait what",
         "isActive": false,
         "posts": []

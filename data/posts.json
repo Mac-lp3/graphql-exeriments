@@ -1,14 +1,38 @@
 [
     {
-        "author": {},
-        "quote": "lol omg"
+        "author": {
+            "id": 1,
+            "name": "Jim Jones",
+            "quote": "lol omg",
+            "isActive": true,
+            "posts": []
+        },
+        "title": "hahaha oh wow",
+        "content": "john madden john maddenjohn maddenjohn maddenjohn maddenjohn madden",
+        "timeStamp": "01012017"
     },
     {
-        "name": "Tommy Tim",
-        "quote": "wow"
+        "author": {
+            "id": 2,
+            "name": "Tommy Tim",
+            "quote": "wow",
+            "isActive": true,
+            "posts": []
+        },
+        "title": "hahaha oh wow",
+        "content": "john madden john maddenjohn maddenjohn maddenjohn maddenjohn madden",
+        "timeStamp": "01012017"
     },
     {
-        "name": "Jim Jones",
-        "quote": "wait what"
+        "author": {
+            "id": 3,
+            "name": "Jim Jones",
+            "quote": "wait what",
+            "isActive": false,
+            "posts": []
+        },
+        "title": "hahaha oh wow",
+        "content": "john madden john maddenjohn maddenjohn maddenjohn maddenjohn madden",
+        "timeStamp": "01012017"
     }
 ]
