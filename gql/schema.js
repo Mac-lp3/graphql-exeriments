@@ -4,13 +4,18 @@ import {
     GraphQLObjectType,
     GraphQLString,
     GraphQLList,
-    GraphQLBoolean
+    GraphQLBoolean,
+    GraphQLInt
 } from 'graphql'
 
 const author = new GraphQLObjectType({
     name: 'author',
     description: 'the author',
     fields: () => ({
+        id: {
+            type: (GraphQLInt),
+            description: 'Numeric ID for this author'
+        },
         name: {
           type: (GraphQLString),
           description: 'the author\'s name or handle'
@@ -26,6 +31,17 @@ const author = new GraphQLObjectType({
         isActive: {
             type: (GraphQLBoolean),
             description: 'if the user is still active'
+        },
+        mobileName: {
+            type: (GraphQLString),
+            resolve(obj) {
+                const spaceInd = obj.name.indexOf(' ')
+                const lastName = obj.name.substring(
+                    spaceInd + 1,
+                    obj.name.length
+                )
+                return obj.name[0] + '. ' + lastName
+            }
         }
     })
 })
@@ -65,24 +81,26 @@ const schema = new GraphQLSchema({
                type: new GraphQLList(author),
                resolve: (root, args) => {
                    console.log(
+                       '****',
                        'root:',
                        root,
-                       'args:',
+                       '\n args:',
                        args
                    )
-                   return null
+                   return require('../data/authors')
               }
             },
             posts: {
                 type: new GraphQLList(post),
                 resolve: (root, args) => {
                     console.log(
+                        '****',
                         'root:',
                         root,
-                        'args:',
+                        '\n args:',
                         args
                     )
-                    return null
+                    return require('../data/posts')
                 }
             }
         }
