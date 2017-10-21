@@ -77,6 +77,13 @@ const schema = new GraphQLSchema({
     query: new GraphQLObjectType({
         name: 'RootQuery',
         fields: {
+            query: {
+                type: (GraphQLInt),
+                resolve: (root, args) => {
+                    console.log(root, args)
+                    return 1337
+                }
+            },
             authors: {
                type: new GraphQLList(author),
                resolve: (root, args) => {
